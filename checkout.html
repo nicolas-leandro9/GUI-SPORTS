@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — Gui Sports</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <a href="index.html"><svg width="180" height="50"><text x="50" y="34"
+            style="font-family:'Bebas Neue';font-size:30px;fill:#fff">GUI <tspan style="fill:#e60000">SPORTS</tspan>
+            </text></svg></a>
+    </div>
+    <div class="icons">
+      <a href="login.html"><span>👤</span></a>
+      <a href="carrinho.html"><span>🛒</span></a>
+    </div>
+
+    <div class="font-controls">
+            <button id="decrease-font" title="Diminuir Fonte">A-</button>
+            <button id="reset-font" title="Fonte Padrão">A</button>
+            <button id="increase-font" title="Aumentar Fonte">A+</button>
+        </div>
+        
+  </header>
+
+  <div class="font-controls">
+            <button id="decrease-font" title="Diminuir Fonte">A-</button>
+            <button id="reset-font" title="Fonte Padrão">A</button>
+            <button id="increase-font" title="Aumentar Fonte">A+</button>
+        </div>
+
+  <div class="checkout-steps">
+    <div class="step done">
+      <div class="step-num">1</div><span>Carrinho</span>
+    </div>
+    <div class="step-line done"></div>
+    <div class="step active">
+      <div class="step-num">2</div><span>Entrega</span>
+    </div>
+    <div class="step-line"></div>
+    <div class="step">
+      <div class="step-num">3</div><span>Pagamento</span>
+    </div>
+    <div class="step-line"></div>
+    <div class="step">
+      <div class="step-num">4</div><span>Confirmação</span>
+    </div>
+  </div>
+
+  <main class="checkout-container">
+    <div>
+      <!-- ENDEREÇO -->
+      <section class="checkout-section">
+        <div class="section-title"><span>01</span> Endereço de Entrega</div>
+        <form class="form-grid">
+          <div class="form-group">
+            <label>CEP</label>
+            <input type="text" placeholder="00000-000">
+          </div>
+          <div class="form-group">
+            <label>Cidade</label>
+            <input type="text" placeholder="Ex: São Paulo">
+          </div>
+          <div class="form-group full">
+            <label>Endereço / Logradouro</label>
+            <input type="text" placeholder="Rua, Avenida...">
+          </div>
+          <div class="form-group">
+            <label>Número</label>
+            <input type="text" placeholder="123">
+          </div>
+          <div class="form-group">
+            <label>Complemento</label>
+            <input type="text" placeholder="Apto, Bloco...">
+          </div>
+        </form>
+      </section>
+
+      <!-- PAGAMENTO -->
+      <section class="checkout-section">
+        <div class="section-title"><span>02</span> Forma de Pagamento</div>
+        <div class="payment-methods">
+          <label class="pay-opt selected">
+            <input type="radio" name="pay" checked>
+            <div>
+              <div style="font-weight:600">Cartão de Crédito</div>
+              <div style="font-size:12px;color:#777">Até 10x sem juros</div>
+            </div>
+          </label>
+          <label class="pay-opt">
+            <input type="radio" name="pay">
+            <div>
+              <div style="font-weight:600">PIX</div>
+              <div style="font-size:12px;color:#00cc44">Aprovação imediata - 5% OFF</div>
+            </div>
+          </label>
+          <label class="pay-opt">
+            <input type="radio" name="pay">
+            <div>
+              <div style="font-weight:600">Boleto Bancário</div>
+              <div style="font-size:12px;color:#777">Vencimento em 2 dias úteis</div>
+            </div>
+          </label>
+        </div>
+      </section>
+    </div>
+
+    <aside>
+      <div class="order-review">
+        <div class="section-title">Resumo</div>
+        <div class="rev-item">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=100" alt="">
+          <div class="rev-info">
+            <h4>Mercurial Vapor XV</h4>
+            <p>Tamanho: 42 | Qtd: 1</p>
+            <p style="color:#fff">R$ 599,90</p>
+          </div>
+        </div>
+        <div class="summary-row"><span>Subtotal</span><span>R$ 599,90</span></div>
+        <div class="summary-row"><span>Frete</span><span style="color:#00cc44">GRÁTIS</span></div>
+        <div class="total-row"><span>Total</span><span>R$ 599,90</span></div>
+        <button class="btn-finish" onclick="alert('Pedido realizado com sucesso!')">FINALIZAR PEDIDO</button>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <h3 style="font-family: 'Bebas Neue'; letter-spacing: 2px;">Gui Sports Newsletter</h3>
+      <p style="font-size: 12px; color: #777;">Receba ofertas exclusivas e lançamentos em primeira mão.</p>
+      <input type="email" placeholder="Seu melhor e-mail"
+        style="background:#1a1a1a; border:1px solid #333; color:#fff; padding:10px; width:250px;">
+      <button class="btn-primary" style="padding: 10px 20px; font-size: 14px;">Assinar</button>
+    </div>
+    <div class="links">
+      <a href="sobre.html">Sobre a Gui Sports</a>
+      <a href="contato.html">Contato</a>
+      <a href="#">Privacidade</a>
+      <a href="#">Termos de Uso</a>
+    </div>
+  </footer>
+
+  <script> const savedTheme = localStorage.getItem('guisports-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.getElementById('themeBtn').textContent =
+      savedTheme === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('guisports-theme', next);
+      document.getElementById('themeBtn').textContent =
+        next === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+    }
+    
+        // Seleciona o elemento HTML raiz
+const htmlElement = document.documentElement;
+
+// Define os limites para não aumentar ou diminuir infinitamente
+const MIN_FONT = 12;
+const MAX_FONT = 22;
+const DEFAULT_FONT = 16;
+
+// Tamanho atualizado na memória
+let currentFontSize = DEFAULT_FONT;
+
+document.getElementById('increase-font').addEventListener('click', () => {
+  if (currentFontSize < MAX_FONT) {
+    currentFontSize += 1; // Aumenta 1px
+    htmlElement.style.setProperty('--font-base', `${currentFontSize}px`);
+  }
+});
+
+document.getElementById('decrease-font').addEventListener('click', () => {
+  if (currentFontSize > MIN_FONT) {
+    currentFontSize -= 1; // Diminui 1px
+    htmlElement.style.setProperty('--font-base', `${currentFontSize}px`);
+  }
+});
+
+document.getElementById('reset-font').addEventListener('click', () => {
+  currentFontSize = DEFAULT_FONT; // Volta ao padrão
+  htmlElement.style.setProperty('--font-base', `${DEFAULT_FONT}px`);
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrinho — Gui Sports</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  
+</head>
+
+<body>
+
+  <div class="top-header">
+    <div class="top-logo"><img src="nike.png" alt="Nike" /><img src="adidas.png" alt="Adidas" /></div>
+    <div class="top-nav">
+      <a href="#">Acessibilidade</a><a href="#">Guia de produtos</a>
+      <a href="#">Acompanhe seu pedido</a><a href="#">Ajuda</a>
+      <a href="#">Junte-se a nós</a><a href="login.html">Entrar</a>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="logo"><a href="index.html"><svg width="180" height="50" viewBox="0 0 180 50"
+          xmlns="http://www.w3.org/2000/svg">
+          <style>
+            .text {
+              font-family: 'Bebas Neue', sans-serif;
+              font-size: 30px;
+              fill: #fff;
+              letter-spacing: 2px
+            }
+
+            .accent {
+              fill: #e60000
+            }
+          </style>
+          <polygon class="accent" points="10,40 25,10 40,40" /><text x="50" y="34" class="text">GUI <tspan
+              class="accent">SPORTS</tspan></text>
+        </svg></a></div>
+    <nav class="nav">
+      <a href="roupas.html">Roupas</a>
+      <a href="calcados.html">Calçados</a>
+      <a href="equipamento.html">Equipamentos</a>
+      <a href="lançamentos.html">Lançamentos</a>
+    </nav>
+    <div class="icons">
+      <span>🔍</span>
+      <a href="conta_dashboard.html"><span>👤</span></a>
+      <span style="color:var(--red)">🛒 <sup
+          style="font-family:'Poppins';font-size:10px" id="cart-badge">3</sup></span>
+          <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">☀️ Claro</button>
+      </div>
+
+       <div class="font-controls">
+            <button id="decrease-font" title="Diminuir Fonte">A-</button>
+            <button id="reset-font" title="Fonte Padrão">A</button>
+            <button id="increase-font" title="Aumentar Fonte">A+</button>
+        </div>
+
+  </header>
+  <div class="font-controls">
+            <button id="decrease-font" title="Diminuir Fonte">A-</button>
+            <button id="reset-font" title="Fonte Padrão">A</button>
+            <button id="increase-font" title="Aumentar Fonte">A+</button>
+        </div>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a><span>›</span> Carrinho
+  </div>
+
+  <!-- CHECKOUT STEPS -->
+  <div class="checkout-steps">
+    <div class="step active">
+      <div class="step-num">1</div>
+      <span>Carrinho</span>
+    </div>
+    <div class="step-line"></div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <span>Entrega</span>
+    </div>
+    <div class="step-line"></div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <span>Pagamento</span>
+    </div>
+    <div class="step-line"></div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <span>Confirmação</span>
+    </div>
+  </div>
+
+  <!-- CART LAYOUT -->
+  <div class="cart-layout">
+
+    <!-- LEFT: ITEMS -->
+    <div>
+      <div class="cart-section-title">
+        Meu Carrinho <span id="items-label">3 itens</span>
+      </div>
+
+      <!-- EMPTY STATE (hidden by default) -->
+      <div class="cart-empty" id="empty-cart">
+        <div style="font-size:64px;margin-bottom:16px">🛒</div>
+        <h2>Seu carrinho está vazio</h2>
+        <p>Adicione produtos para continuar comprando.</p>
+        <a href="calcados.html">VER PRODUTOS</a>
+      </div>
+
+      <!-- ITEMS LIST -->
+      <div id="cart-items">
+
+        <div class="cart-item" id="item-1">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&q=80" alt="Mercurial Vapor XV" />
+          <div class="cart-item-info">
+            <span class="cart-item-brand">Nike</span>
+            <span class="cart-item-name">Mercurial Vapor XV Elite</span>
+            <span class="cart-item-meta">Cor: Azul Mercurial &nbsp;·&nbsp; Tamanho: 42</span>
+            <div class="cart-item-actions">
+              <div class="qty-ctrl">
+                <button class="qty-btn" onclick="changeQty('item-1',-1)">−</button>
+                <span class="qty-val" id="qty-item-1">1</span>
+                <button class="qty-btn" onclick="changeQty('item-1',1)">+</button>
+              </div>
+              <button class="btn-remove" onclick="removeItem('item-1')">🗑 Remover</button>
+            </div>
+          </div>
+          <div class="cart-item-price">
+            <span class="price-now" id="price-item-1">R$ 599,90</span>
+          </div>
+        </div>
+
+        <div class="cart-item" id="item-2">
+          <img src="https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=200&q=80" alt="Regata Dri-FIT" />
+          <div class="cart-item-info">
+            <span class="cart-item-brand">Nike</span>
+            <span class="cart-item-name">Regata Dri-FIT Pro</span>
+            <span class="cart-item-meta">Cor: Preto &nbsp;·&nbsp; Tamanho: M</span>
+            <div class="cart-item-actions">
+              <div class="qty-ctrl">
+                <button class="qty-btn" onclick="changeQty('item-2',-1)">−</button>
+                <span class="qty-val" id="qty-item-2">2</span>
+                <button class="qty-btn" onclick="changeQty('item-2',1)">+</button>
+              </div>
+              <button class="btn-remove" onclick="removeItem('item-2')">🗑 Remover</button>
+            </div>
+          </div>
+          <div class="cart-item-price">
+            <span class="price-now" id="price-item-2">R$ 299,80</span>
+            <span class="price-old">R$ 399,80</span>
+          </div>
+        </div>
+
+        <div class="cart-item" id="item-3">
+          <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=200&q=80" alt="Jaqueta Windrunner" />
+          <div class="cart-item-info">
+            <span class="cart-item-brand">Nike</span>
+            <span class="cart-item-name">Jaqueta Windrunner</span>
+            <span class="cart-item-meta">Cor: Vermelho &nbsp;·&nbsp; Tamanho: G</span>
+            <div class="cart-item-actions">
+              <div class="qty-ctrl">
+                <button class="qty-btn" onclick="changeQty('item-3',-1)">−</button>
+                <span class="qty-val" id="qty-item-3">1</span>
+                <button class="qty-btn" onclick="changeQty('item-3',1)">+</button>
+              </div>
+              <button class="btn-remove" onclick="removeItem('item-3')">🗑 Remover</button>
+            </div>
+          </div>
+          <div class="cart-item-price">
+            <span class="price-now" id="price-item-3">R$ 399,90</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SUGGESTIONS -->
+      <p class="suggested-title">Também pode te interessar</p>
+      <div class="suggested-grid">
+        <div class="sug-card" onclick="location.href='produto.html'">
+          <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=120&q=80" alt="" />
+          <div class="sug-card-info">
+            <h4>Nike Metcon 9</h4>
+            <p class="sp">R$ 499,90</p>
+          </div>
+        </div>
+        <div class="sug-card" onclick="location.href='produto.html'">
+          <img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=120&q=80" alt="" />
+          <div class="sug-card-info">
+            <h4>Predator Accuracy</h4>
+            <p class="sp">R$ 649,90</p>
+          </div>
+        </div>
+        <div class="sug-card" onclick="location.href='produto.html'">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=120&q=80" alt="" />
+          <div class="sug-card-info">
+            <h4>Legging Training Pro</h4>
+            <p class="sp">R$ 189,90</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: SUMMARY -->
+    <div>
+      <div class="order-summary">
+        <div class="summary-title">Resumo do Pedido</div>
+
+        <!-- FREE SHIPPING PROGRESS -->
+        <div class="free-ship-bar">
+          <span>Faltam <strong id="frete-falta">R$ 0,30</strong> para <strong>frete grátis!</strong> 🚚</span>
+          <div class="progress">
+            <div class="progress-fill" id="frete-bar" style="width:99%"></div>
+          </div>
+        </div>
+
+        <div class="summary-row"><span>Subtotal</span><span class="val" id="subtotal-val">R$ 1.299,60</span></div>
+        <div class="summary-row"><span>Desconto</span><span class="val val-green" id="discount-val">- R$ 100,00</span>
+        </div>
+        <div class="summary-row"><span>Frete</span><span class="val" id="frete-val">—</span></div>
+
+        <!-- SHIPPING OPTIONS -->
+        <div class="shipping-options">
+          <div class="ship-opt selected" onclick="selectShip(this, 0)">
+            <div class="ship-label">🚚 <span>Frete Grátis (5–7 dias)</span></div>
+            <span class="ship-price">GRÁTIS</span>
+          </div>
+          <div class="ship-opt" onclick="selectShip(this, 19.90)">
+            <div class="ship-label">⚡ <span>Expresso (2–3 dias)</span></div>
+            <span class="ship-price">R$ 19,90</span>
+          </div>
+          <div class="ship-opt" onclick="selectShip(this, 34.90)">
+            <div class="ship-label">🏍 <span>Motoboy (hoje)</span></div>
+            <span class="ship-price">R$ 34,90</span>
+          </div>
+        </div>
+
+        <!-- COUPON -->
+        <div class="coupon-wrap">
+          <input type="text" id="coupon-input" placeholder="Código de cupom" />
+          <button onclick="applyCoupon()">APLICAR</button>
+        </div>
+        <div class="coupon-msg" id="coupon-msg"></div>
+
+        <div class="summary-row total"><span>Total</span><span class="val" id="total-val">R$ 1.199,60</span></div>
+
+        <a href="checkout.html"><button class="btn-checkout">FINALIZAR COMPRA →</button></a>
+        <a href="calcados.html" class="btn-keep-shopping">← Continuar comprando</a>
+
+        <div class="safe-badges">
+          <div class="safe-badge">
+            <div>🔒</div>Pagamento Seguro
+          </div>
+          <div class="safe-badge">
+            <div>🔄</div>30 dias p/ troca
+          </div>
+          <div class="safe-badge">
+            <div>📦</div>Entrega garantida
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>
+      <h3>Newsletter</h3><input type="email" placeholder="Seu e-mail" /><button class="btn">Inscrever</button>
+    </div>
+    <div class="links"><a href="sobre.html">Sobre</a><a href="contato.html">Contato</a><a href="#">Política</a></div>
+  </footer>
+
+  <script src="java.js"></script>
+  <script>
+   
+    const items = {
+      'item-1': { unitPrice: 599.90, qty: 1 },
+      'item-2': { unitPrice: 149.90, qty: 2 },
+      'item-3': { unitPrice: 399.90, qty: 1 }
+    };
+    let shipCost = 0;
+    let couponDiscount = 0;
+    const FREE_SHIP_THRESHOLD = 499;
+
+    function fmt(val) {
+      return 'R$ ' + val.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+
+    function recalc() {
+      let subtotal = 0;
+      Object.values(items).forEach(i => { subtotal += i.unitPrice * i.qty; });
+
+      // free shipping bar
+      const pct = Math.min(100, (subtotal / FREE_SHIP_THRESHOLD) * 100);
+      document.getElementById('frete-bar').style.width = pct + '%';
+      const falta = Math.max(0, FREE_SHIP_THRESHOLD - subtotal);
+      document.getElementById('frete-falta').textContent = falta > 0 ? fmt(falta) : 'R$ 0,00';
+
+      document.getElementById('subtotal-val').textContent = fmt(subtotal);
+      document.getElementById('discount-val').textContent = couponDiscount > 0 ? '- ' + fmt(couponDiscount) : '—';
+      document.getElementById('frete-val').textContent = shipCost === 0 ? 'GRÁTIS' : fmt(shipCost);
+
+      const total = Math.max(0, subtotal - couponDiscount + shipCost);
+      document.getElementById('total-val').textContent = fmt(total);
+
+      // items count
+      const count = Object.keys(items).length;
+      document.getElementById('items-label').textContent = count + ' item' + (count !== 1 ? 's' : '');
+      document.getElementById('cart-badge').textContent = count;
+
+      // empty state
+      document.getElementById('empty-cart').style.display = count === 0 ? 'block' : 'none';
+      document.getElementById('cart-items').style.display = count === 0 ? 'none' : '';
+    }
+
+    function changeQty(id, delta) {
+      const item = items[id];
+      if (!item) return;
+      const newQty = Math.max(1, Math.min(10, item.qty + delta));
+      item.qty = newQty;
+      document.getElementById('qty-' + id).textContent = newQty;
+
+      // update item price display
+      const priceEl = document.getElementById('price-' + id);
+      if (priceEl) priceEl.textContent = fmt(item.unitPrice * newQty);
+
+      recalc();
+    }
+
+    function removeItem(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateX(20px)';
+        el.style.transition = '.3s';
+        setTimeout(() => { el.remove(); delete items[id]; recalc(); }, 300);
+      }
+    }
+
+    function selectShip(el, cost) {
+      document.querySelectorAll('.ship-opt').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      shipCost = cost;
+      recalc();
+    }
+
+    function applyCoupon() {
+      const code = document.getElementById('coupon-input').value.trim().toUpperCase();
+      const msg = document.getElementById('coupon-msg');
+      msg.style.display = 'block';
+      if (code === 'GUI10') {
+        couponDiscount = 50;
+        msg.style.color = '#00cc44';
+        msg.textContent = '✔ Cupom aplicado! R$ 50,00 de desconto.';
+      } else if (code === 'FRETE') {
+        shipCost = 0;
+        document.querySelectorAll('.ship-opt').forEach(o => o.classList.remove('selected'));
+        document.querySelectorAll('.ship-opt')[0].classList.add('selected');
+        msg.style.color = '#00cc44';
+        msg.textContent = '✔ Frete grátis aplicado!';
+      } else {
+        msg.style.color = 'var(--red)';
+        msg.textContent = '✗ Cupom inválido ou expirado.';
+      }
+      recalc();
+    }
+
+    recalc();
+
+    const savedTheme = localStorage.getItem('guisports-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.getElementById('themeBtn').textContent =
+        savedTheme === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+
+    function toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('guisports-theme', next);
+        document.getElementById('themeBtn').textContent =
+            next === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+    }
+
+        // Seleciona o elemento HTML raiz
+const htmlElement = document.documentElement;
+
+// Define os limites para não aumentar ou diminuir infinitamente
+const MIN_FONT = 12;
+const MAX_FONT = 22;
+const DEFAULT_FONT = 16;
+
+// Tamanho atualizado na memória
+let currentFontSize = DEFAULT_FONT;
+
+document.getElementById('increase-font').addEventListener('click', () => {
+  if (currentFontSize < MAX_FONT) {
+    currentFontSize += 1; // Aumenta 1px
+    htmlElement.style.setProperty('--font-base', `${currentFontSize}px`);
+  }
+});
+
+document.getElementById('decrease-font').addEventListener('click', () => {
+  if (currentFontSize > MIN_FONT) {
+    currentFontSize -= 1; // Diminui 1px
+    htmlElement.style.setProperty('--font-base', `${currentFontSize}px`);
+  }
+});
+
+document.getElementById('reset-font').addEventListener('click', () => {
+  currentFontSize = DEFAULT_FONT; // Volta ao padrão
+  htmlElement.style.setProperty('--font-base', `${DEFAULT_FONT}px`);
+});
+  </script>
+</body>
+
+</html>

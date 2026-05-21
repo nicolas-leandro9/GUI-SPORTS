@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produto — Gui Sports</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+
+  <!-- TOP HEADER -->
+  <div class="top-header">
+    <div class="top-logo">
+      <img src="nike.png" alt="Nike" />
+      <img src="adidas.png" alt="Adidas" />
+    </div>
+    <div class="top-nav">
+      <a href="#">Acessibilidade</a>
+      <a href="#">Guia de produtos</a>
+      <a href="#">Acompanhe seu pedido</a>
+      <a href="#">Ajuda</a>
+      <a href="#">Junte-se a nós</a>
+      <a href="login.html">Entrar</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">
+        <svg width="180" height="50" viewBox="0 0 180 50" xmlns="http://www.w3.org/2000/svg">
+          <style>.text{font-family:'Bebas Neue',sans-serif;font-size:30px;fill:#fff;letter-spacing:2px}.accent{fill:#e60000}</style>
+          <polygon class="accent" points="10,40 25,10 40,40"/>
+          <text x="50" y="34" class="text">GUI <tspan class="accent">SPORTS</tspan></text>
+        </svg>
+      </a>
+    </div>
+    <nav class="nav">
+      <a href="roupas.html">Roupas</a>
+      <a href="calcados.html">Calçados</a>
+      <a href="equipamento.html">Equipamentos</a>
+      <a href="lançamentos.html">Lançamentos</a>
+    </nav>
+    <div class="icons">
+      <span>🔍</span>
+      <span>👤</span>
+      <span>🛒</span>
+      <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">☀️ Claro</button>
+    </div>
+
+    <div class="font-controls">
+            <button id="decrease-font" title="Diminuir Fonte">A-</button>
+            <button id="reset-font" title="Fonte Padrão">A</button>
+            <button id="increase-font" title="Aumentar Fonte">A+</button>
+        </div>
+        
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>›</span>
+    <a href="#">Calçados</a>
+    <span>›</span>
+    <a href="#">Futebol</a>
+    <span>›</span>
+    Nike Mercurial Vapor XV
+  </div>
+
+  <!-- PRODUCT DETAIL -->
+  <section class="product-detail">
+
+    <!-- GALLERY -->
+    <div class="gallery">
+      <div class="thumbs">
+        <img class="thumb active"
+          src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&q=80" alt="" onclick="switchImg(this, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700&q=80')" />
+        <img class="thumb"
+          src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=200&q=80" alt="" onclick="switchImg(this, 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=700&q=80')" />
+        <img class="thumb"
+          src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=200&q=80" alt="" onclick="switchImg(this, 'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=700&q=80')" />
+        <img class="thumb"
+          src="https://images.unsplash.com/photo-1556906781-9a414e2a9c86?w=200&q=80" alt="" onclick="switchImg(this, 'https://images.unsplash.com/photo-1556906781-9a414e2a9c86?w=700&q=80')" />
+      </div>
+
+      <div class="main-img-wrap">
+        <div class="badge-new">NOVO</div>
+        <img id="main-photo" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700&q=80" alt="Nike Mercurial Vapor XV" />
+      </div>
+    </div>
+
+    <!-- PRODUCT INFO -->
+    <div class="product-info">
+      <div>
+        <p class="product-brand">Nike</p>
+        <h1 class="product-name">Mercurial<br>Vapor XV</h1>
+      </div>
+
+      <div class="product-rating">
+        <span class="stars">★★★★★</span>
+        <span>4.8 · <a href="#reviews" style="color:var(--red);text-decoration:none">127 avaliações</a></span>
+      </div>
+
+      <div>
+        <div class="price-block">
+          <span class="price-now">R$ 599,90</span>
+          <span class="price-old">R$ 799,90</span>
+          <span class="price-off">-25%</span>
+        </div>
+        <p class="installments">Em até <strong>10x de R$ 59,99</strong> sem juros</p>
+      </div>
+
+      <hr class="sep" />
+
+      <!-- COLOR -->
+      <div>
+        <p class="selector-label">Cor — <span style="color:#ccc;font-weight:400;text-transform:none;letter-spacing:0">Azul Mercurial</span></p>
+        <div class="color-options">
+          <div class="color-dot active" style="background:#1a44c4" title="Azul Mercurial"></div>
+          <div class="color-dot" style="background:#e60000" title="Vermelho"></div>
+          <div class="color-dot" style="background:#111;border-color:#444" title="Preto"></div>
+          <div class="color-dot" style="background:#f5f5f5" title="Branco"></div>
+        </div>
+      </div>
+
+      <!-- SIZE -->
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+          <p class="selector-label" style="margin:0">Tamanho (BR)</p>
+          <a href="#" class="size-guide">Guia de tamanhos →</a>
+        </div>
+        <div class="size-options">
+          <button class="size-btn unavailable">37</button>
+          <button class="size-btn" onclick="selectSize(this)">38</button>
+          <button class="size-btn active" onclick="selectSize(this)">39</button>
+          <button class="size-btn" onclick="selectSize(this)">40</button>
+          <button class="size-btn" onclick="selectSize(this)">41</button>
+          <button class="size-btn" onclick="selectSize(this)">42</button>
+          <button class="size-btn" onclick="selectSize(this)">43</button>
+          <button class="size-btn unavailable">44</button>
+        </div>
+      </div>
+
+      <!-- BUY -->
+      <div class="buy-row">
+        <div class="qty-control">
+          <button class="qty-btn" onclick="changeQty(-1)">−</button>
+          <input class="qty-num" id="qty" type="number" value="1" min="1" max="10" readonly />
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+        </div>
+        <button class="btn-cart" onclick="addToCart()">🛒 ADICIONAR</button>
+        <button class="btn-wishlist" title="Salvar">♡</button>
+      </div>
+
+      <!-- SHIPPING -->
+      <div class="shipping-check">
+        <span>📦</span>
+        <input type="text" placeholder="Calcular frete — CEP" maxlength="9" oninput="maskCEP(this)" />
+        <button onclick="calcFrete()">CALCULAR</button>
+      </div>
+      <div id="frete-result" style="font-family:'Poppins';font-size:13px;color:#888;margin-top:-8px;display:none"></div>
+
+      <hr class="sep" />
+
+      <!-- FEATURES -->
+      <div class="features-grid">
+        <div class="feature-item">
+          <span class="feature-icon">⚡</span>
+          <div><strong>Tecnologia Speed</strong>Sola carbono para máxima tração</div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🌬️</span>
+          <div><strong>Mesh Flyknit</strong>Cabedal ultra-leve e respirável</div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🚚</span>
+          <div><strong>Frete Grátis</strong>Acima de R$ 499</div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🔄</span>
+          <div><strong>Troca Grátis</strong>30 dias para trocar</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABS: Descrição / Especificações / Avaliações -->
+  <div class="product-tabs">
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="switchTab(this,'tab-desc')">Descrição</button>
+      <button class="tab-btn" onclick="switchTab(this,'tab-specs')">Especificações</button>
+      <button class="tab-btn" onclick="switchTab(this,'tab-reviews')" id="reviews">Avaliações (127)</button>
+    </div>
+
+    <div class="tab-content active" id="tab-desc">
+      <p>O Nike Mercurial Vapor XV é a evolução máxima de velocidade no futebol. Desenvolvido para jogadores que fazem da aceleração sua maior arma, este chuteira combina cabedal Flyknit de nova geração com sola em fibra de carbono, entregando leveza extrema e tração precisa em campo natural ou sintético.</p>
+      <br>
+      <p>O sistema de travas NikeSkin proporciona aderência multidirecional enquanto o formato anatômico abraça o pé para máximo controle. Usado pelos melhores do mundo — agora disponível para você.</p>
+    </div>
+
+    <div class="tab-content" id="tab-specs">
+      <table class="specs-table">
+        <tr><td>Marca</td><td>Nike</td></tr>
+        <tr><td>Modelo</td><td>Mercurial Vapor XV Elite FG</td></tr>
+        <tr><td>Cabedal</td><td>Nike Flyknit de nova geração</td></tr>
+        <tr><td>Sola</td><td>Fibra de carbono Speed Plate</td></tr>
+        <tr><td>Tipo de trava</td><td>Mista (FG)</td></tr>
+        <tr><td>Superfície</td><td>Grama natural firme</td></tr>
+        <tr><td>Peso (par 42)</td><td>185g</td></tr>
+        <tr><td>Cores disponíveis</td><td>Azul, Vermelho, Preto, Branco</td></tr>
+        <tr><td>País de fabricação</td><td>Vietnã</td></tr>
+        <tr><td>SKU</td><td>DR5935-040</td></tr>
+      </table>
+    </div>
+
+    <div class="tab-content" id="tab-reviews">
+      <!-- summary -->
+      <div class="review-summary">
+        <div style="text-align:center">
+          <div class="review-score">4.8</div>
+          <div class="stars" style="font-size:18px">★★★★★</div>
+          <div style="font-family:'Poppins';font-size:12px;color:#666;margin-top:6px">127 avaliações</div>
+        </div>
+        <div class="review-bars">
+          <div class="review-bar-row"><span>5★</span><div class="review-bar-track"><div class="review-bar-fill" style="width:80%"></div></div><span>80%</span></div>
+          <div class="review-bar-row"><span>4★</span><div class="review-bar-track"><div class="review-bar-fill" style="width:13%"></div></div><span>13%</span></div>
+          <div class="review-bar-row"><span>3★</span><div class="review-bar-track"><div class="review-bar-fill" style="width:4%"></div></div><span>4%</span></div>
+          <div class="review-bar-row"><span>2★</span><div class="review-bar-track"><div class="review-bar-fill" style="width:2%"></div></div><span>2%</span></div>
+          <div class="review-bar-row"><span>1★</span><div class="review-bar-track"><div class="review-bar-fill" style="width:1%"></div></div><span>1%</span></div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="reviewer">Carlos M.</p>
+        <p class="review-date">12 de abril de 2025 · Compra verificada</p>
+        <p>Melhor chuteira que já usei. O Flyknit envolve o pé perfeitamente e a sola de carbono realmente faz diferença na arrancada. Vale cada centavo.</p>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="reviewer">Rafael S.</p>
+        <p class="review-date">3 de março de 2025 · Compra verificada</p>
+        <p>Chegou antes do prazo, embalagem impecável. O produto é espetacular — leve, confortável e com ótima aderência no campo society.</p>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★☆</div>
+        <p class="reviewer">Ana L.</p>
+        <p class="review-date">20 de fevereiro de 2025 · Compra verificada</p>
+        <p>Ótima chuteira, só achei que o tamanho veste um pouco menor que o habitual. Recomendo pedir um número acima se tiver dúvida.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED PRODUCTS -->
+  <section class="related">
+    <h2>Você também pode gostar</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=400&q=80" alt="">
+        <span>Futebol</span>
+        <h3>Predator Accuracy</h3>
+        <p>R$ 649,90</p>
+        <button>Adicionar</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&q=80" alt="">
+        <span>Running</span>
+        <h3>Air Zoom Pegasus</h3>
+        <p>R$ 449,90</p>
+        <button>Adicionar</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?w=400&q=80" alt="">
+        <span>Futebol</span>
+        <h3>X Speedportal.1</h3>
+        <p>R$ 589,90</p>
+        <button>Adicionar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>
+      <h3>Newsletter</h3>
+      <input type="email" placeholder="Seu e-mail" />
+      <button class="btn">Inscrever</button>
+    </div>
+    <div class="links">
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="#">Política</a>
+    </div>
+  </footer>
+
+  <script src="java.js"></script>
+  <script>
+    // Gallery
+    function switchImg(thumb, src) {
+      document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+      document.getElementById('main-photo').src = src;
+    }
+
+    // Size
+    function selectSize(btn) {
+      if (btn.classList.contains('unavailable')) return;
+      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    // Quantity
+    function changeQty(delta) {
+      const input = document.getElementById('qty');
+      const val = Math.max(1, Math.min(10, parseInt(input.value) + delta));
+      input.value = val;
+    }
+
+    // Cart
+    function addToCart() {
+      const btn = document.querySelector('.btn-cart');
+      btn.textContent = '✔ ADICIONADO!';
+      btn.style.background = '#00a854';
+      setTimeout(() => { btn.textContent = '🛒 ADICIONAR'; btn.style.background = ''; }, 2000);
+    }
+
+    // Wishlist
+    document.querySelector('.btn-wishlist').addEventListener('click', function() {
+      this.textContent = this.textContent === '♡' ? '♥' : '♡';
+      this.style.color = this.textContent === '♥' ? 'var(--red)' : '';
+    });
+
+    // Color dots
+    document.querySelectorAll('.color-dot').forEach(dot => {
+      dot.addEventListener('click', () => {
+        document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+        dot.classList.add('active');
+      });
+    });
+
+    // Tabs
+    function switchTab(btn, id) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(id).classList.add('active');
+    }
+
+    // CEP mask & fake frete
+    function maskCEP(input) {
+      let v = input.value.replace(/\D/g, '');
+      if (v.length > 5) v = v.slice(0,5) + '-' + v.slice(5,8);
+      input.value = v;
+    }
+
+    function calcFrete() {
+      const r = document.getElementById('frete-result');
+      r.style.display = 'block';
+      r.innerHTML = '📦 <strong style="color:#ccc">Frete Grátis</strong> — entrega entre <strong style="color:#ccc">3 a 5 dias úteis</strong>';
+    }
+
+    const savedTheme = localStorage.getItem('guisports-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.getElementById('themeBtn').textContent =
+        savedTheme === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+
+    function toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('guisports-theme', next);
+        document.getElementById('themeBtn').textContent =
+            next === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+    }
+
+        // Seleciona o elemento HTML raiz
+const htmlElement = document.documentElement;
+
+// Define os limites para não aumentar ou diminuir infinitamente
+const MIN_FONT = 12;
+const MAX_FONT = 22;
+const DEFAULT_FONT = 16;
+
+// Tamanho atualizado na memória
+let currentFontSize = DEFAULT_FONT;
+
+document.getElementById('increase-font').addEventListener('click', () => {
+  if (currentFontSize < MAX_FONT) {
+    currentFontSize += 1; // Aumenta 1px
+    htmlElement.style.setProperty('--font-base', `${currentFontSize}px`);
+  }
+});
+
+document.getElementById('decrease-font').addEventListener('click', () => {
+  if (currentFontSize > MIN_FONT) {
+    currentFontSize -= 1; // Diminui 1px
+    htmlElement.style.setProperty('--font-base', `${currentFontSize}px`);
+  }
+});
+
+document.getElementById('reset-font').addEventListener('click', () => {
+  currentFontSize = DEFAULT_FONT; // Volta ao padrão
+  htmlElement.style.setProperty('--font-base', `${DEFAULT_FONT}px`);
+});
+
+  </script>
+</body>
+</html>
