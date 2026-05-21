@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lançamentos — Gui Sports</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+
+</head>
+
+<body>
+
+    <div class="top-header">
+        <div class="top-logo"><img src="nike.png" alt="Nike" /><img src="adidas.png" alt="Adidas" /></div>
+        <div class="top-nav">
+            <a href="#">Acessibilidade</a><a href="#">Guia de produtos</a>
+            <a href="#">Acompanhe seu pedido</a><a href="#">Ajuda</a>
+            <a href="#">Junte-se a nós</a><a href="login.html">Entrar</a>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="logo"><a href="pagina_principal.html"><svg width="180" height="50" viewBox="0 0 180 50"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <style>
+                        .text {
+                            font-family: 'Bebas Neue', sans-serif;
+                            font-size: 30px;
+                            fill: #fff;
+                            letter-spacing: 2px
+                        }
+
+                        .accent {
+                            fill: #e60000
+                        }
+                    </style>
+                    <polygon class="accent" points="10,40 25,10 40,40" /><text x="50" y="34" class="text">GUI <tspan
+                            class="accent">SPORTS</tspan></text>
+                </svg></a></div>
+        <nav class="nav">
+            <a href="roupas.html">Roupas</a>
+            <a href="calcados.html">Calçados</a>
+            <a href="equipamentos.html">Equipamentos</a>
+            <a href="lancamentos.html" style="color:#fff">Lançamentos</a>
+        </nav>
+        <div class="icons">
+            <span>🔍</span>
+            <a href="conta_dashboard.html"><span>👤</span></a>
+            <a href="carrinho.html" style="color:#fff;text-decoration:none"><span>🛒</span></a>
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">☀️ Claro</button>
+        </div>
+
+        <div class="font-controls">
+            <button id="decrease-font" title="Diminuir Fonte">A-</button>
+            <button id="reset-font" title="Fonte Padrão">A</button>
+            <button id="increase-font" title="Aumentar Fonte">A+</button>
+        </div>
+        
+    </header>
+
+    <div class="cat-hero">
+        <div class="cat-hero-content">
+            <p class="tag">New Arrivals</p>
+            <h1>LANÇAMENTOS</h1>
+            <p>As últimas novidades e exclusividades do mundo esportivo</p>
+        </div>
+    </div>
+
+    <div class="breadcrumb">
+        <a href="pagina_principal.html">Home</a><span>Lançamentos</span>
+    </div>
+
+    <div class="subcat-cards">
+        <div class="subcat-card" onclick="filterCat('tenis')">
+            <img src="https://images.unsplash.com/photo-1552346154-21d32810baa3?w=400&q=80" alt="Tênis" />
+            <div class="subcat-card-label">👟 Tênis</div>
+        </div>
+        <div class="subcat-card" onclick="filterCat('vestuario')">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&q=80" alt="Vestuário" />
+            <div class="subcat-card-label">👕 Vestuário</div>
+        </div>
+        <div class="subcat-card" onclick="filterCat('colecoes')">
+            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400&q=80" alt="Coleções" />
+            <div class="subcat-card-label">✨ Coleções</div>
+        </div>
+        <div class="subcat-card" onclick="filterCat('exclusivo')">
+            <img src="https://images.unsplash.com/photo-1579298245158-33e8f568f7d3?w=400&q=80" alt="Exclusivo" />
+            <div class="subcat-card-label">🔥 Exclusivo</div>
+        </div>
+    </div>
+
+    <div class="subcats">
+        <a class="subcat-pill active" href="#" onclick="filterCat('todos');return false">Todos</a>
+        <a class="subcat-pill" href="#" onclick="filterCat('tenis');return false">👟 Tênis</a>
+        <a class="subcat-pill" href="#" onclick="filterCat('vestuario');return false">👕 Vestuário</a>
+        <a class="subcat-pill" href="#" onclick="filterCat('colecoes');return false">✨ Coleções Novas</a>
+        <a class="subcat-pill" href="#" onclick="filterCat('exclusivo');return false">🔥 Exclusivo</a>
+    </div>
+
+    <div class="shop-layout">
+
+        <aside class="sidebar">
+            <div class="filter-group">
+                <div class="filter-title">Categoria</div>
+                <label class="filter-option"><input type="checkbox" checked /> Todos os Lançamentos</label>
+                <label class="filter-option"><input type="checkbox" /> Calçados</label>
+                <label class="filter-option"><input type="checkbox" /> Roupas</label>
+                <label class="filter-option"><input type="checkbox" /> Equipamentos</label>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-title">Marca</div>
+                <label class="filter-option"><input type="checkbox" checked /> Nike</label>
+                <label class="filter-option"><input type="checkbox" checked /> Adidas</label>
+                <label class="filter-option"><input type="checkbox" /> Jordan</label>
+                <label class="filter-option"><input type="checkbox" /> Puma</label>
+                <label class="filter-option"><input type="checkbox" /> Asics</label>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-title">Preço</div>
+                <div class="price-range">
+                    <input type="range" min="0" max="2500" value="1800"
+                        oninput="document.getElementById('pmax2').textContent='R$'+this.value" />
+                    <div class="price-labels"><span>R$0</span><span id="pmax2">R$1800</span></div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="filter-title">Mês de Lançamento</div>
+                <label class="filter-option"><input type="checkbox" checked /> Este Mês</label>
+                <label class="filter-option"><input type="checkbox" /> Últimos 30 Dias</label>
+                <label class="filter-option"><input type="checkbox" /> Próximos (Pré-venda)</label>
+            </div>
+        </aside>
+
+        <div class="product-area">
+            <div class="toolbar">
+                <span class="toolbar-count" id="product-count">Exibindo 12 produtos</span>
+                <div class="toolbar-right">
+                    <select class="sort-select">
+                        <option>Mais Recentes</option>
+                        <option>Mais Hypados</option>
+                        <option>Maior Preço</option>
+                        <option>Menor Preço</option>
+                    </select>
+                    <div class="view-btns">
+                        <button class="view-btn active" onclick="setView('grid',this)">▦</button>
+                        <button class="view-btn" onclick="setView('list',this)">☰</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pg" id="product-grid">
+
+                <div class="product-card" data-cat="exclusivo">
+                    <div class="badge-exclusive">LIMITADO</div>
+                    <img src="https://images.unsplash.com/photo-1579298245158-33e8f568f7d3?w=400&q=80"
+                        alt="Jordan 1 Retro" />
+                    <div class="product-card-body">
+                        <span>Exclusivo</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>Air Jordan 1 Retro High '25</h3>
+                        <div><span class="price">R$ 1.499,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="tenis">
+                    <div class="badge-new">NOVO</div>
+                    <img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=400&q=80"
+                        alt="Nike Dunk" />
+                    <div class="product-card-body">
+                        <span>Tênis</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>Nike Dunk Low "Panda 2.0"</h3>
+                        <div><span class="price">R$ 899,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="vestuario">
+                    <div class="badge-new">NOVO</div>
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&q=80"
+                        alt="Corta Vento" />
+                    <div class="product-card-body">
+                        <span>Vestuário</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>Jaqueta Corta-Vento Tech Fleece</h3>
+                        <div><span class="price">R$ 549,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="colecoes">
+                    <div class="badge-new">NOVO</div>
+                    <img src="https://images.unsplash.com/photo-1556906781-9a414e2a9c86?w=400&q=80"
+                        alt="Adidas X Speedportal" />
+                    <div class="product-card-body">
+                        <span>Coleções</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>Chuteira Adidas X Elite '25</h3>
+                        <div><span class="price">R$ 1.299,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="tenis">
+                    <div class="badge-new">NOVO</div>
+                    <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400&q=80"
+                        alt="Puma RS-X" />
+                    <div class="product-card-body">
+                        <span>Tênis</span>
+                        <div class="mini-stars">★★★★☆</div>
+                        <h3>Puma RS-X "Neon Edition"</h3>
+                        <div><span class="price">R$ 699,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="exclusivo">
+                    <div class="badge-exclusive">LIMITADO</div>
+                    <img src="https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=400&q=80"
+                        alt="Yeezy Boost" />
+                    <div class="product-card-body">
+                        <span>Exclusivo</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>Yeezy Boost 350 V3</h3>
+                        <div><span class="price">R$ 1.899,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="vestuario">
+                    <div class="badge-new">NOVO</div>
+                    <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&q=80"
+                        alt="Moletom Essentials" />
+                    <div class="product-card-body">
+                        <span>Vestuário</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>Moletom Adidas Originals</h3>
+                        <div><span class="price">R$ 429,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="colecoes">
+                    <div class="badge-new">NOVO</div>
+                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&q=80"
+                        alt="Nike Alphafly" />
+                    <div class="product-card-body">
+                        <span>Coleções</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>Nike Alphafly Next% 3</h3>
+                        <div><span class="price">R$ 1.999,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="tenis">
+                    <div class="badge-new">NOVO</div>
+                    <img src="https://images.unsplash.com/photo-1588117260148-b47818741c74?w=400&q=80"
+                        alt="Asics Gel Kayano" />
+                    <div class="product-card-body">
+                        <span>Tênis</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>Asics Gel-Kayano 31</h3>
+                        <div><span class="price">R$ 1.099,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="vestuario">
+                    <div class="badge-new">NOVO</div>
+                    <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=400&q=80"
+                        alt="Camisa Seleção" />
+                    <div class="product-card-body">
+                        <span>Vestuário</span>
+                        <div class="mini-stars">★★★★☆</div>
+                        <h3>Camisa Seleção Argentina (Away)</h3>
+                        <div><span class="price">R$ 349,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="exclusivo">
+                    <div class="badge-exclusive">COLAB</div>
+                    <img src="https://images.unsplash.com/photo-1616124619460-ff4ed8f4683c?w=400&q=80"
+                        alt="Collab Sneaker" />
+                    <div class="product-card-body">
+                        <span>Exclusivo</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>New Balance x Action Bronson</h3>
+                        <div><span class="price">R$ 1.199,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="colecoes">
+                    <div class="badge-new">NOVO</div>
+                    <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&q=80"
+                        alt="Real Madrid 25" />
+                    <div class="product-card-body">
+                        <span>Coleções</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>Kit Real Madrid 2025/26</h3>
+                        <div><span class="price">R$ 499,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pagination">
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">›</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div>
+            <h3>Newsletter</h3><input type="email" placeholder="Seu e-mail" /><button class="btn">Inscrever</button>
+        </div>
+        <div class="links"><a href="sobre.html">Sobre</a><a href="contato.html">Contato</a><a href="#">Política</a>
+        </div>
+    </footer>
+
+    <script src="java.js"></script>
+    <script>
+        function filterCat(cat) {
+            document.querySelectorAll('.subcat-pill').forEach(p => p.classList.remove('active'));
+            const pills = document.querySelectorAll('.subcat-pill');
+            pills.forEach(p => { if (p.textContent.toLowerCase().includes(cat) || cat === 'todos') p.classList.toggle('active', cat === 'todos' || p.textContent.toLowerCase().includes(cat)); });
+            if (cat === 'todos') pills[0].classList.add('active');
+
+            const cards = document.querySelectorAll('#product-grid .product-card');
+            let count = 0;
+            cards.forEach(c => {
+                const show = cat === 'todos' || c.dataset.cat === cat;
+                c.style.display = show ? '' : 'none';
+                if (show) count++;
+            });
+            document.getElementById('product-count').textContent = `Exibindo ${count} produto${count !== 1 ? 's' : ''}`;
+        }
+
+        function setView(type, btn) {
+            document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const grid = document.getElementById('product-grid');
+            grid.classList.toggle('list-view', type === 'list');
+        }
+
+        const savedTheme = localStorage.getItem('guisports-theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('guisports-theme', next);
+            document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+        }
+        // Seleciona o elemento HTML raiz
+        const htmlElement = document.documentElement;
+
+        // Define os limites para não aumentar ou diminuir infinitamente
+        const MIN_FONT = 12;
+        const MAX_FONT = 22;
+        const DEFAULT_FONT = 16;
+
+        // Tamanho atualizado na memória
+        let currentFontSize = DEFAULT_FONT;
+
+        document.getElementById('increase-font').addEventListener('click', () => {
+            if (currentFontSize < MAX_FONT) {
+                currentFontSize += 1; // Aumenta 1px
+                htmlElement.style.setProperty('--font-base', `${currentFontSize}px`);
+            }
+        });
+
+        document.getElementById('decrease-font').addEventListener('click', () => {
+            if (currentFontSize > MIN_FONT) {
+                currentFontSize -= 1; // Diminui 1px
+                htmlElement.style.setProperty('--font-base', `${currentFontSize}px`);
+            }
+        });
+
+        document.getElementById('reset-font').addEventListener('click', () => {
+            currentFontSize = DEFAULT_FONT; // Volta ao padrão
+            htmlElement.style.setProperty('--font-base', `${DEFAULT_FONT}px`);
+        });
+
+    </script>
+</body>
+
+</html>

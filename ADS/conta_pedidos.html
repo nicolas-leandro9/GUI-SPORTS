@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meus Pedidos — Gui Sports</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+
+  <div class="top-header">
+    <div class="top-logo"><img src="nike.png" alt="Nike" /><img src="adidas.png" alt="Adidas" /></div>
+    <div class="top-nav">
+      <a href="#">Acessibilidade</a><a href="#">Guia de produtos</a>
+      <a href="#">Acompanhe seu pedido</a><a href="#">Ajuda</a>
+      <a href="#">Junte-se a nós</a><a href="login.html">Entrar</a>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="logo">
+      <a href="pagina_principal.html">
+        <svg width="180" height="50" viewBox="0 0 180 50" xmlns="http://www.w3.org/2000/svg">
+          <style>.text{font-family:'Bebas Neue',sans-serif;font-size:30px;fill:#fff;letter-spacing:2px}.accent{fill:#e60000}</style>
+          <polygon class="accent" points="10,40 25,10 40,40"/>
+          <text x="50" y="34" class="text">GUI <tspan class="accent">SPORTS</tspan></text>
+        </svg>
+      </a>
+    </div>
+    <nav class="nav">
+      <a href="roupas.html">Roupas</a>
+      <a href="calcados.html">Calçados</a>
+      <a href="equipamento.html">Equipamentos</a>
+      <a href="lançamentos.html">Lançamentos</a>
+    </nav>
+    <div class="icons">
+      <span>🔍</span>
+      <a href="conta_dashboard.html"><span>👤</span></a>
+      <a href="carrinho.html"><span>🛒</span></a>
+      <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">☀️ Claro</button>
+    </div>
+
+    <div class="font-controls">
+            <button id="decrease-font" title="Diminuir Fonte">A-</button>
+            <button id="reset-font" title="Fonte Padrão">A</button>
+            <button id="increase-font" title="Aumentar Fonte">A+</button>
+        </div>
+
+  </header>
+
+  <div class="font-controls">
+            <button id="decrease-font" title="Diminuir Fonte">A-</button>
+            <button id="reset-font" title="Fonte Padrão">A</button>
+            <button id="increase-font" title="Aumentar Fonte">A+</button>
+        </div>
+
+  <div class="account-layout">
+    <aside class="account-nav">
+      <a href="conta_dashboard.html" class="nav-item">📊 Dashboard</a>
+      <a href="conta_pedidos.html" class="nav-item active">📦 Meus Pedidos</a>
+      <a href="conta_enderecos.html" class="nav-item">🏠 Endereços</a>
+      <a href="conta_dados.html" class="nav-item">👤 Dados Pessoais</a>
+      <a href="conta_cartoes.html" class="nav-item">💳 Cartões Salvos</a>
+      <a href="login.html" class="nav-item" style="margin-top:20px; color:var(--red)">🚪 Sair</a>
+    </aside>
+
+    <main>
+      <div class="welcome-header">
+        <h1>Meus <span style="color:var(--red)">Pedidos</span></h1>
+        <p>Acompanhe o status das suas compras.</p>
+      </div>
+
+      <!-- Filtros -->
+      <div class="orders-filter">
+        <button class="filter-pill active" onclick="filterOrders('todos', this)">Todos</button>
+        <button class="filter-pill" onclick="filterOrders('processando', this)">Processando</button>
+        <button class="filter-pill" onclick="filterOrders('enviado', this)">Enviado</button>
+        <button class="filter-pill" onclick="filterOrders('entregue', this)">Entregue</button>
+        <button class="filter-pill" onclick="filterOrders('cancelado', this)">Cancelado</button>
+      </div>
+
+      <!-- Pedido 1 — Processando -->
+      <div class="order-card" data-status="processando">
+        <div class="order-head">
+          <div>
+            <div class="order-id">Pedido #88291</div>
+            <div class="order-meta">Realizado em 12/05/2026 · 1 item · Pagamento: PIX</div>
+          </div>
+          <div class="order-head-right">
+            <span class="status process">Processando</span>
+            <div class="order-total">R$ 599,90</div>
+          </div>
+        </div>
+        <div class="order-body">
+          <img class="order-thumb" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&q=80" alt="Mercurial Vapor XV" />
+          <div class="order-items-info">
+            <div class="order-item-name">Nike Mercurial Vapor XV</div>
+            <div class="order-item-detail">Tamanho: 42 · Cor: Azul Mercurial · Qtd: 1</div>
+          </div>
+          <div class="order-actions">
+            <a href="#" class="btn-outline" onclick="cancelarPedido(event, this)">CANCELAR</a>
+          </div>
+        </div>
+        <div class="order-tracker">
+          <div style="font-family:'Poppins',sans-serif;font-size:12px;color:#666">Previsão de entrega: <strong style="color:#ccc">16/05/2026</strong></div>
+          <div class="tracker-steps">
+            <div class="tracker-step done">
+              <div class="tracker-dot">✓</div>
+              <span class="tracker-label">Pedido</span>
+            </div>
+            <div class="tracker-step done">
+              <div class="tracker-dot">✓</div>
+              <span class="tracker-label">Confirmado</span>
+            </div>
+            <div class="tracker-step current">
+              <div class="tracker-dot">⚙</div>
+              <span class="tracker-label">Preparando</span>
+            </div>
+            <div class="tracker-step">
+              <div class="tracker-dot"></div>
+              <span class="tracker-label">Enviado</span>
+            </div>
+            <div class="tracker-step">
+              <div class="tracker-dot"></div>
+              <span class="tracker-label">Entregue</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pedido 2 — Entregue -->
+      <div class="order-card" data-status="entregue">
+        <div class="order-head">
+          <div>
+            <div class="order-id">Pedido #88150</div>
+            <div class="order-meta">Realizado em 02/04/2026 · 3 itens · Pagamento: Cartão de Crédito</div>
+          </div>
+          <div class="order-head-right">
+            <span class="status delivery">Entregue</span>
+            <div class="order-total">R$ 1.250,00</div>
+          </div>
+        </div>
+        <div class="order-body">
+          <img class="order-thumb" src="https://images.unsplash.com/photo-1539185441755-769473a23570?w=200&q=80" alt="Adidas Ultraboost" />
+          <div class="order-items-info">
+            <div class="order-item-name">Adidas Ultraboost 24</div>
+            <div class="order-item-detail">Tamanho: 41 · Cor: Preto · Qtd: 1</div>
+            <div class="order-more-items">+ 2 outros itens</div>
+          </div>
+          <div class="order-actions">
+            <a href="#" class="btn-outline">NOTA FISCAL</a>
+            <a href="#" class="btn-outline" style="border-color:var(--red);color:var(--red)">COMPRAR DE NOVO</a>
+          </div>
+        </div>
+        <div class="order-tracker">
+          <div style="font-family:'Poppins',sans-serif;font-size:12px;color:#666">Entregue em: <strong style="color:#00cc44">08/04/2026</strong></div>
+          <div class="tracker-steps">
+            <div class="tracker-step done"><div class="tracker-dot">✓</div><span class="tracker-label">Pedido</span></div>
+            <div class="tracker-step done"><div class="tracker-dot">✓</div><span class="tracker-label">Confirmado</span></div>
+            <div class="tracker-step done"><div class="tracker-dot">✓</div><span class="tracker-label">Preparado</span></div>
+            <div class="tracker-step done"><div class="tracker-dot">✓</div><span class="tracker-label">Enviado</span></div>
+            <div class="tracker-step done"><div class="tracker-dot">✓</div><span class="tracker-label">Entregue</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pedido 3 — Enviado -->
+      <div class="order-card" data-status="enviado">
+        <div class="order-head">
+          <div>
+            <div class="order-id">Pedido #87940</div>
+            <div class="order-meta">Realizado em 25/03/2026 · 1 item · Pagamento: Boleto</div>
+          </div>
+          <div class="order-head-right">
+            <span class="status" style="background:rgba(0,150,255,.1);color:#0096ff">Enviado</span>
+            <div class="order-total">R$ 299,90</div>
+          </div>
+        </div>
+        <div class="order-body">
+          <img class="order-thumb" src="https://images.unsplash.com/photo-1511746315387-c4a76990fdce?w=200&q=80" alt="Jaqueta Windbreaker" />
+          <div class="order-items-info">
+            <div class="order-item-name">Jaqueta Windbreaker Pro</div>
+            <div class="order-item-detail">Tamanho: M · Cor: Preto · Qtd: 1</div>
+          </div>
+          <div class="order-actions">
+            <a href="#" class="btn-outline">RASTREAR</a>
+            <a href="#" class="btn-outline">NOTA FISCAL</a>
+          </div>
+        </div>
+        <div class="order-tracker">
+          <div style="font-family:'Poppins',sans-serif;font-size:12px;color:#666">Código de rastreio: <strong style="color:#ccc">BR123456789SP</strong></div>
+          <div class="tracker-steps">
+            <div class="tracker-step done"><div class="tracker-dot">✓</div><span class="tracker-label">Pedido</span></div>
+            <div class="tracker-step done"><div class="tracker-dot">✓</div><span class="tracker-label">Confirmado</span></div>
+            <div class="tracker-step done"><div class="tracker-dot">✓</div><span class="tracker-label">Preparado</span></div>
+            <div class="tracker-step current"><div class="tracker-dot">🚚</div><span class="tracker-label">Enviado</span></div>
+            <div class="tracker-step"><div class="tracker-dot"></div><span class="tracker-label">Entregue</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estado vazio (escondido por padrão) -->
+      <div class="empty-state" id="empty-state" style="display:none">
+        <div class="empty-icon">📦</div>
+        <h2>Nenhum pedido encontrado</h2>
+        <p>Não há pedidos nessa categoria ainda.</p>
+        <a href="pagina_principal.html" class="btn-primary" style="display:inline-block;text-decoration:none">EXPLORAR PRODUTOS</a>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div>
+      <h3>Gui Sports Newsletter</h3>
+      <p style="font-size:12px;color:#777;margin-bottom:10px;">Receba ofertas exclusivas e lançamentos em primeira mão.</p>
+      <input type="email" placeholder="Seu melhor e-mail">
+      <button class="btn-primary" style="padding:10px 20px;font-size:14px;">Assinar</button>
+    </div>
+    <div class="links">
+      <a href="sobre.html">Sobre a Gui Sports</a>
+      <a href="contato.html">Contato</a>
+      <a href="#">Privacidade</a>
+      <a href="#">Termos de Uso</a>
+    </div>
+  </footer>
+
+  <script>
+    function filterOrders(status, btn) {
+      document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      const cards = document.querySelectorAll('.order-card');
+      let visible = 0;
+      cards.forEach(c => {
+        const show = status === 'todos' || c.dataset.status === status;
+        c.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      document.getElementById('empty-state').style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    function cancelarPedido(e, btn) {
+      e.preventDefault();
+      if (confirm('Tem certeza que deseja cancelar este pedido?')) {
+        const card = btn.closest('.order-card');
+        card.dataset.status = 'cancelado';
+        card.querySelector('.status').textContent = 'Cancelado';
+        card.querySelector('.status').style.background = 'rgba(150,150,150,.15)';
+        card.querySelector('.status').style.color = '#888';
+        btn.style.display = 'none';
+      }
+    }
+
+    const savedTheme = localStorage.getItem('guisports-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('guisports-theme', next);
+      document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+    }
+
+    // Seleciona o elemento HTML raiz
+const htmlElement = document.documentElement;
+
+// Define os limites para não aumentar ou diminuir infinitamente
+const MIN_FONT = 12;
+const MAX_FONT = 22;
+const DEFAULT_FONT = 16;
+
+// Tamanho atualizado na memória
+let currentFontSize = DEFAULT_FONT;
+
+document.getElementById('increase-font').addEventListener('click', () => {
+  if (currentFontSize < MAX_FONT) {
+    currentFontSize += 1; // Aumenta 1px
+    htmlElement.style.setProperty('--font-base', `${currentFontSize}px`);
+  }
+});
+
+document.getElementById('decrease-font').addEventListener('click', () => {
+  if (currentFontSize > MIN_FONT) {
+    currentFontSize -= 1; // Diminui 1px
+    htmlElement.style.setProperty('--font-base', `${currentFontSize}px`);
+  }
+});
+
+document.getElementById('reset-font').addEventListener('click', () => {
+  currentFontSize = DEFAULT_FONT; // Volta ao padrão
+  htmlElement.style.setProperty('--font-base', `${DEFAULT_FONT}px`);
+});
+  </script>
+</body>
+</html>

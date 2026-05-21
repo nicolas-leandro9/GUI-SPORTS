@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equipamentos — Gui Sports</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    
+</head>
+
+<body>
+
+    <div class="top-header">
+        <div class="top-logo"><img src="nike.png" alt="Nike" /><img src="adidas.png" alt="Adidas" /></div>
+        <div class="top-nav">
+            <a href="#">Acessibilidade</a><a href="#">Guia de produtos</a>
+            <a href="#">Acompanhe seu pedido</a><a href="#">Ajuda</a>
+            <a href="#">Junte-se a nós</a><a href="login.html">Entrar</a>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="logo"><a href="pagina_principal.html"><svg width="180" height="50" viewBox="0 0 180 50">
+                    <polygon fill="#e60000" points="10,40 25,10 40,40" />
+                    <text x="50" y="34" font-family="Bebas Neue" font-size="30" fill="#fff" letter-spacing="2">GUI
+                        <tspan fill="#e60000">SPORTS</tspan></text>
+                </svg></a></div>
+        <nav class="nav">
+            <a href="roupas.html">Roupas</a><a href="calcados.html">Calçados</a>
+            <a href="equipamento.html" style="color:#fff">Equipamentos</a><a href="lançamentos.html">Lançamentos</a>
+        </nav>
+        <div class="icons">
+            <span>🔍</span>
+            <a href="conta_dashboard.html"><span>👤</span></a>
+            <a href="carrinho.html"><span>🛒</span></a>
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">☀️ Claro</button>
+        </div>
+
+        <div class="font-controls">
+            <button id="decrease-font" title="Diminuir Fonte">A-</button>
+            <button id="reset-font" title="Fonte Padrão">A</button>
+            <button id="increase-font" title="Aumentar Fonte">A+</button>
+        </div>
+        
+    </header>
+
+    <div class="cat-hero">
+        <div class="cat-hero-content">
+            <p class="tag">Coleção 2025</p>
+            <h1>EQUIPAMENTOS</h1>
+            <p>Bolas, luvas, redes e tudo que você precisa para treinar como os melhores</p>
+        </div>
+    </div>
+
+    <div class="breadcrumb">
+        <a href="pagina_principal.html">Home</a><span>›</span>Equipamentos
+    </div>
+
+    <div class="subcat-cards">
+        <div class="subcat-card" onclick="filterCat('futebol')">
+            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&q=80" alt="Futebol" />
+            <div class="subcat-card-label">⚽ Futebol</div>
+        </div>
+        <div class="subcat-card" onclick="filterCat('academia')">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=80" alt="Academia" />
+            <div class="subcat-card-label">🏋️ Academia</div>
+        </div>
+        <div class="subcat-card" onclick="filterCat('natacao')">
+            <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=400&q=80" alt="Natação" />
+            <div class="subcat-card-label">🏊 Natação</div>
+        </div>
+        <div class="subcat-card" onclick="filterCat('corrida')">
+            <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=400&q=80" alt="Corrida" />
+            <div class="subcat-card-label">🏃 Corrida</div>
+        </div>
+        <div class="subcat-card" onclick="filterCat('bolas')">
+            <img src="https://images.unsplash.com/photo-1543351611-58f69d7c1781?w=400&q=80" alt="Bolas" />
+            <div class="subcat-card-label">🏀 Bolas</div>
+        </div>
+    </div>
+
+    <div class="subcats">
+        <a class="subcat-pill active" href="#" onclick="filterCat('todos');return false">Todos</a>
+        <a class="subcat-pill" href="#" onclick="filterCat('futebol');return false">⚽ Futebol</a>
+        <a class="subcat-pill" href="#" onclick="filterCat('academia');return false">🏋️ Academia</a>
+        <a class="subcat-pill" href="#" onclick="filterCat('natacao');return false">🏊 Natação</a>
+        <a class="subcat-pill" href="#" onclick="filterCat('corrida');return false">🏃 Corrida</a>
+        <a class="subcat-pill" href="#" onclick="filterCat('bolas');return false">🎯 Bolas</a>
+        <a class="subcat-pill" href="#" onclick="filterCat('proteção');return false">🛡️ Proteção</a>
+    </div>
+
+    <div class="shop-layout">
+        <aside class="sidebar">
+            <div class="filter-group">
+                <div class="filter-title">Categoria</div>
+                <label class="filter-option"><input type="checkbox" checked /> Todos</label>
+                <label class="filter-option"><input type="checkbox" /> Futebol</label>
+                <label class="filter-option"><input type="checkbox" /> Academia / Musculação</label>
+                <label class="filter-option"><input type="checkbox" /> Natação</label>
+                <label class="filter-option"><input type="checkbox" /> Corrida</label>
+                <label class="filter-option"><input type="checkbox" /> Bolas</label>
+                <label class="filter-option"><input type="checkbox" /> Proteção</label>
+            </div>
+            <div class="filter-group">
+                <div class="filter-title">Marca</div>
+                <label class="filter-option"><input type="checkbox" checked /> Nike</label>
+                <label class="filter-option"><input type="checkbox" checked /> Adidas</label>
+                <label class="filter-option"><input type="checkbox" /> Penalty</label>
+                <label class="filter-option"><input type="checkbox" /> Speedo</label>
+                <label class="filter-option"><input type="checkbox" /> Mizuno</label>
+                <label class="filter-option"><input type="checkbox" /> Wilson</label>
+            </div>
+            <div class="filter-group">
+                <div class="filter-title">Preço</div>
+                <div class="price-range">
+                    <input type="range" min="0" max="2000" value="1500"
+                        oninput="document.getElementById('pmaxE').textContent='R$'+this.value" />
+                    <div class="price-labels"><span>R$0</span><span id="pmaxE">R$1500</span></div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="product-area">
+            <div class="toolbar">
+                <span class="toolbar-count" id="product-count">Exibindo 12 produtos</span>
+                <div class="toolbar-right">
+                    <select class="sort-select">
+                        <option>Mais Relevantes</option>
+                        <option>Menor Preço</option>
+                        <option>Maior Preço</option>
+                        <option>Mais Vendidos</option>
+                    </select>
+                    <div class="view-btns">
+                        <button class="view-btn active" onclick="setView('grid',this)">▦</button>
+                        <button class="view-btn" onclick="setView('list',this)">☰</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pg" id="product-grid">
+
+                <div class="product-card" data-cat="futebol">
+                    <div class="badge-new">NOVO</div>
+                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&q=80"
+                        alt="Bola Nike" />
+                    <div class="product-card-body">
+                        <span>Futebol</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>Bola Nike Flight Premier League</h3>
+                        <div><span class="price">R$ 399,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="academia">
+                    <div class="badge-new">NOVO</div>
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=80"
+                        alt="Luvas Academia" />
+                    <div class="product-card-body">
+                        <span>Academia</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>Luvas de Treino Nike Fundamental</h3>
+                        <div><span class="price">R$ 149,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="natacao">
+                    <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=400&q=80"
+                        alt="Óculos Natação" />
+                    <div class="product-card-body">
+                        <span>Natação</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>Óculos Speedo Hydrovision</h3>
+                        <div><span class="price">R$ 189,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="futebol">
+                    <div class="badge-sale">-15%</div>
+                    <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&q=80" alt="Caneleira" />
+                    <div class="product-card-body">
+                        <span>Futebol</span>
+                        <div class="mini-stars">★★★★☆</div>
+                        <h3>Caneleira Nike Charge</h3>
+                        <div><span class="price">R$ 84,90</span><span class="price-old">R$ 99,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="academia">
+                    <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=400&q=80"
+                        alt="Corda Pular" />
+                    <div class="product-card-body">
+                        <span>Academia</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>Corda de Pular Speed Rope Pro</h3>
+                        <div><span class="price">R$ 119,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="corrida">
+                    <div class="badge-new">NOVO</div>
+                    <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?w=400&q=80"
+                        alt="Relógio GPS" />
+                    <div class="product-card-body">
+                        <span>Corrida</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>Relógio GPS Garmin Forerunner 265</h3>
+                        <div><span class="price">R$ 1.899,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="bolas">
+                    <div class="badge-sale">-10%</div>
+                    <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&q=80"
+                        alt="Bola Basquete" />
+                    <div class="product-card-body">
+                        <span>Bolas</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>Bola de Basquete Wilson Evolution</h3>
+                        <div><span class="price">R$ 359,90</span><span class="price-old">R$ 399,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="academia">
+                    <img src="https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=400&q=80" alt="Halteres" />
+                    <div class="product-card-body">
+                        <span>Academia</span>
+                        <div class="mini-stars">★★★★☆</div>
+                        <h3>Par de Halteres 10kg Neoprene</h3>
+                        <div><span class="price">R$ 229,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="futebol">
+                    <div class="badge-new">NOVO</div>
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&q=80"
+                        alt="Luva Goleiro" />
+                    <div class="product-card-body">
+                        <span>Futebol</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>Luva de Goleiro Adidas Predator Match</h3>
+                        <div><span class="price">R$ 299,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="natacao">
+                    <img src="https://images.unsplash.com/photo-1600965962361-9035dbfd1c50?w=400&q=80"
+                        alt="Toca Natação" />
+                    <div class="product-card-body">
+                        <span>Natação</span>
+                        <div class="mini-stars">★★★★☆</div>
+                        <h3>Touca de Silicone Arena Cobra</h3>
+                        <div><span class="price">R$ 79,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="proteção">
+                    <div class="badge-sale">-20%</div>
+                    <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=400&q=80"
+                        alt="Joelheira" />
+                    <div class="product-card-body">
+                        <span>Proteção</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>Joelheira McDavid Nível 2</h3>
+                        <div><span class="price">R$ 159,90</span><span class="price-old">R$ 199,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="bolas">
+                    <div class="badge-sale">-10%</div>
+                    <img src="https://images.unsplash.com/photo-1543351611-58f69d7c1781?w=400&q=80"
+                        alt="Bola de Vôlei" />
+                    <div class="product-card-body">
+                        <span>Bolas</span>
+                        <div class="mini-stars">★★★★★</div>
+                        <h3>Bola de Vôlei Mikasa Oficial</h3>
+                        <div><span class="price">R$ 449,90</span><span class="price-old">R$ 499,90</span></div>
+                        <button onclick="location.href='produto.html'">Ver Produto</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pagination">
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">›</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div>
+            <h3>Gui Sports Newsletter</h3>
+            <p>Receba ofertas exclusivas e lançamentos em primeira mão.</p>
+            <input type="email" placeholder="Seu melhor e-mail" />
+            <button class="btn">Assinar</button>
+        </div>
+        <div class="links">
+            <a href="sobre.html">Sobre a Gui Sports</a>
+            <a href="contato.html">Contato</a>
+            <a href="#">Privacidade</a>
+            <a href="#">Termos de Uso</a>
+        </div>
+    </footer>
+
+    <script src="java.js"></script>
+    <script>
+        const saved = localStorage.getItem('guisports-theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', saved);
+        document.getElementById('themeBtn').textContent = saved === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+        function toggleTheme() {
+            const curr = document.documentElement.getAttribute('data-theme');
+            const next = curr === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('guisports-theme', next);
+            document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+        }
+        function filterCat(cat) {
+            document.querySelectorAll('.subcat-pill').forEach(p => p.classList.remove('active'));
+            if (cat === 'todos') document.querySelectorAll('.subcat-pill')[0].classList.add('active');
+            else document.querySelectorAll('.subcat-pill').forEach(p => { if (p.textContent.toLowerCase().includes(cat)) p.classList.add('active'); });
+            const cards = document.querySelectorAll('#product-grid .product-card');
+            let count = 0;
+            cards.forEach(c => { const show = cat === 'todos' || c.dataset.cat === cat; c.style.display = show ? '' : 'none'; if (show) count++; });
+            document.getElementById('product-count').textContent = `Exibindo ${count} produto${count !== 1 ? 's' : ''}`;
+        }
+        function setView(type, btn) {
+            document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('product-grid').classList.toggle('list-view', type === 'list');
+        }
+
+            // Seleciona o elemento HTML raiz
+const htmlElement = document.documentElement;
+
+// Define os limites para não aumentar ou diminuir infinitamente
+const MIN_FONT = 12;
+const MAX_FONT = 22;
+const DEFAULT_FONT = 16;
+
+// Tamanho atualizado na memória
+let currentFontSize = DEFAULT_FONT;
+
+document.getElementById('increase-font').addEventListener('click', () => {
+  if (currentFontSize < MAX_FONT) {
+    currentFontSize += 1; // Aumenta 1px
+    htmlElement.style.setProperty('--font-base', `${currentFontSize}px`);
+  }
+});
+
+document.getElementById('decrease-font').addEventListener('click', () => {
+  if (currentFontSize > MIN_FONT) {
+    currentFontSize -= 1; // Diminui 1px
+    htmlElement.style.setProperty('--font-base', `${currentFontSize}px`);
+  }
+});
+
+document.getElementById('reset-font').addEventListener('click', () => {
+  currentFontSize = DEFAULT_FONT; // Volta ao padrão
+  htmlElement.style.setProperty('--font-base', `${DEFAULT_FONT}px`);
+});
+
+    </script>
+</body>
+
+</html>

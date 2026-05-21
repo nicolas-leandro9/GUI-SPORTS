@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minha Conta — Gui Sports</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+ 
+</head>
+<body>
+
+   <div class="top-header">
+        <div class="top-logo"><img src="nike.png" alt="Nike" /><img src="adidas.png" alt="Adidas" /></div>
+        <div class="top-nav">
+            <a href="#">Acessibilidade</a><a href="#">Guia de produtos</a>
+            <a href="#">Acompanhe seu pedido</a><a href="#">Ajuda</a>
+            <a href="#">Junte-se a nós</a><a href="login.html">Entrar</a>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="logo"><a href="pagina_principal.html"><svg width="180" height="50" viewBox="0 0 180 50"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <style>
+                        .text {
+                            font-family: 'Bebas Neue', sans-serif;
+                            font-size: 30px;
+                            fill: #fff;
+                            letter-spacing: 2px
+                        }
+
+                        .accent {
+                            fill: #e60000
+                        }
+                    </style>
+                    <polygon class="accent" points="10,40 25,10 40,40" /><text x="50" y="34" class="text">GUI <tspan
+                            class="accent">SPORTS</tspan></text>
+                </svg></a></div>
+        <nav class="nav">
+            <a href="roupas.html">Roupas</a>
+            <a href="calcados.html" style="color:#fff">Calçados</a>
+            <a href="equipamento.html">Equipamentos</a>
+            <a href="lançamentos.html">Lançamentos</a>
+        </nav>
+        <div class="icons">
+            <span>🔍</span>
+            <a href="conta_dashboard.html"><span>👤</span></a>
+            <a href="carrinho.html" style="color:#fff;text-decoration:none"><span>🛒</span></a>
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">☀️ Claro</button>
+        </div>
+
+        <div class="font-controls">
+            <button id="decrease-font" title="Diminuir Fonte">A-</button>
+            <button id="reset-font" title="Fonte Padrão">A</button>
+            <button id="increase-font" title="Aumentar Fonte">A+</button>
+        </div>
+        
+    </header>
+
+    <div class="font-controls">
+            <button id="decrease-font" title="Diminuir Fonte">A-</button>
+            <button id="reset-font" title="Fonte Padrão">A</button>
+            <button id="increase-font" title="Aumentar Fonte">A+</button>
+        </div>
+
+  <div class="account-layout">
+    <!-- NAVEGAÇÃO ESQUERDA -->
+    <aside class="account-nav">
+      <a href="#" class="nav-item active">📊 Dashboard</a>
+      <a href="conta_pedidos.html" class="nav-item">📦 Meus Pedidos</a>
+      <a href="#" class="nav-item">🏠 Endereços</a>
+      <a href="#" class="nav-item">👤 Dados Pessoais</a>
+      <a href="#" class="nav-item">💳 Cartões Salvos</a>
+      <a href="#" class="nav-item" style="margin-top:20px; color:var(--red)">🚪 Sair</a>
+    </aside>
+
+    <!-- CONTEÚDO DIREITA -->
+    <main>
+      <div class="welcome-header">
+        <h1>Olá, João Silva!</h1>
+        <p>Bem-vindo à sua área exclusiva Gui Sports.</p>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="stat-card">
+          <h3>Último Pedido</h3>
+          <div class="val">#88291</div>
+          <p style="font-size:12px; color:#666">Realizado em 12/05/2026</p>
+        </div>
+        <div class="stat-card">
+          <h3>Pontos Gui Club</h3>
+          <div class="val">1.250 pts</div>
+          <p style="font-size:12px; color:#666">Você tem R$ 25,00 em bônus</p>
+        </div>
+        <div class="stat-card">
+          <h3>Status Membro</h3>
+          <div class="val">ELITE</div>
+          <p style="font-size:12px; color:#666">Frete grátis liberado</p>
+        </div>
+      </div>
+
+      <div class="recent-orders">
+        <h2>Pedidos Recentes</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Pedido</th>
+              <th>Data</th>
+              <th>Status</th>
+              <th>Total</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#88291</td>
+              <td>12/05/2026</td>
+              <td><span class="status process">Processando</span></td>
+              <td>R$ 599,90</td>
+              <td><button class="btn-view">DETALHES</button></td>
+            </tr>
+            <tr>
+              <td>#88150</td>
+              <td>02/04/2026</td>
+              <td><span class="status delivery">Entregue</span></td>
+              <td>R$ 1.250,00</td>
+              <td><button class="btn-view">DETALHES</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer">
+        <div>
+            <h3>Gui Sports Newsletter</h3>
+            <p style="font-size:12px; color:#777; margin-bottom:10px;">Receba ofertas exclusivas e lançamentos em primeira mão.</p>
+            <input type="email" placeholder="Seu melhor e-mail" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px;width:220px;">
+            <button class="btn-primary" style="padding:10px 20px;font-size:14px;">Assinar</button>
+        </div>
+        <div class="links">
+            <a href="sobre.html">Sobre a Gui Sports</a>
+            <a href="contato.html">Contato</a>
+            <a href="#">Privacidade</a>
+            <a href="#">Termos de Uso</a>
+        </div>
+    </footer>
+
+  <script>
+    const savedTheme = localStorage.getItem('guisports-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.getElementById('themeBtn').textContent =
+        savedTheme === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+
+    function toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('guisports-theme', next);
+        document.getElementById('themeBtn').textContent =
+            next === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+    }
+
+        // Seleciona o elemento HTML raiz
+const htmlElement = document.documentElement;
+
+// Define os limites para não aumentar ou diminuir infinitamente
+const MIN_FONT = 12;
+const MAX_FONT = 22;
+const DEFAULT_FONT = 16;
+
+// Tamanho atualizado na memória
+let currentFontSize = DEFAULT_FONT;
+
+document.getElementById('increase-font').addEventListener('click', () => {
+  if (currentFontSize < MAX_FONT) {
+    currentFontSize += 1; // Aumenta 1px
+    htmlElement.style.setProperty('--font-base', `${currentFontSize}px`);
+  }
+});
+
+document.getElementById('decrease-font').addEventListener('click', () => {
+  if (currentFontSize > MIN_FONT) {
+    currentFontSize -= 1; // Diminui 1px
+    htmlElement.style.setProperty('--font-base', `${currentFontSize}px`);
+  }
+});
+
+document.getElementById('reset-font').addEventListener('click', () => {
+  currentFontSize = DEFAULT_FONT; // Volta ao padrão
+  htmlElement.style.setProperty('--font-base', `${DEFAULT_FONT}px`);
+});
+  </script>
+
+</body>
+</html>
